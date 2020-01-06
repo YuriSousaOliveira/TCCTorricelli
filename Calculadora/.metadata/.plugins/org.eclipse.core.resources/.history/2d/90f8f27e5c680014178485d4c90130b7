@@ -1,0 +1,179 @@
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+
+public class Calc extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtvalor1;
+	private JTextField txtvalor2;
+	private JTextField txtresult;
+	private JTextField lblconta;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Calc frame = new Calc();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Calc() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 291, 297);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JButton btn1 = new JButton("1");
+		btn1.setBounds(10, 125, 47, 23);
+		contentPane.add(btn1);
+		
+		JButton btn4 = new JButton("4");
+		btn4.setBounds(10, 91, 47, 23);
+		contentPane.add(btn4);
+		
+		JButton btn0 = new JButton("0");
+		btn0.setBounds(10, 159, 189, 23);
+		contentPane.add(btn0);
+		
+		JButton btn7 = new JButton("7");
+		btn7.setBounds(10, 57, 47, 23);
+		contentPane.add(btn7);
+		
+		JButton btn2 = new JButton("2");
+		btn2.setBounds(80, 125, 47, 23);
+		contentPane.add(btn2);
+		
+		JButton btn5 = new JButton("5");
+		btn5.setBounds(80, 91, 47, 23);
+		contentPane.add(btn5);
+		
+		JButton btn8 = new JButton("8");
+		btn8.setBounds(80, 57, 47, 23);
+		contentPane.add(btn8);
+		
+		JButton btn3 = new JButton("3");
+		btn3.setBounds(152, 125, 47, 23);
+		contentPane.add(btn3);
+		
+		JButton btn6 = new JButton("6");
+		btn6.setBounds(152, 91, 47, 23);
+		contentPane.add(btn6);
+		
+		JButton btn9 = new JButton("9");
+		btn9.setBounds(152, 57, 47, 23);
+		contentPane.add(btn9);
+		
+		JButton btndividi = new JButton("/");
+		btndividi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblconta.setText("/");
+			}
+		});
+		btndividi.setBounds(219, 57, 47, 23);
+		contentPane.add(btndividi);
+		
+		JButton btnmultiplica = new JButton("*");
+		btnmultiplica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblconta.setText("X");
+			}
+		});
+		btnmultiplica.setBounds(219, 91, 47, 23);
+		contentPane.add(btnmultiplica);
+		
+		JButton btnsubtrai = new JButton("-");
+		btnsubtrai.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblconta.setText("-");
+			}
+		});
+		btnsubtrai.setBounds(219, 125, 47, 23);
+		contentPane.add(btnsubtrai);
+		
+		JButton btnsoma = new JButton("+");
+		btnsoma.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				lblconta.setText("+");
+			}
+		});
+		btnsoma.setBounds(219, 160, 47, 23);
+		contentPane.add(btnsoma);
+		
+		txtvalor1 = new JTextField();
+		txtvalor1.setEditable(false);
+		txtvalor1.setBounds(10, 11, 67, 20);
+		contentPane.add(txtvalor1);
+		txtvalor1.setColumns(10);
+		
+		txtvalor2 = new JTextField();
+		txtvalor2.setEditable(false);
+		txtvalor2.setColumns(10);
+		txtvalor2.setBounds(103, 11, 67, 20);
+		contentPane.add(txtvalor2);
+		
+		txtresult = new JTextField();
+		txtresult.setEditable(false);
+		txtresult.setBounds(199, 11, 67, 20);
+		contentPane.add(txtresult);
+		txtresult.setColumns(10);
+		
+		JLabel lblNewLabel = new JLabel("=");
+		lblNewLabel.setBounds(180, 14, 14, 14);
+		contentPane.add(lblNewLabel);
+		
+		JButton btnresult = new JButton("=");
+		btnresult.setBounds(10, 193, 112, 23);
+		contentPane.add(btnresult);
+		
+		JButton txtlimpar = new JButton("C");
+		txtlimpar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				txtresult.setText("");
+				txtvalor1.setText("");
+				txtvalor2.setText("");
+				lblconta.setText("");
+			}
+		});
+		txtlimpar.setBounds(152, 193, 114, 23);
+		contentPane.add(txtlimpar);
+		
+		lblconta = new JTextField();
+		lblconta.setEditable(false);
+		lblconta.setText("");
+		lblconta.setBounds(80, 11, 19, 20);
+		contentPane.add(lblconta);
+		lblconta.setColumns(10);
+		
+		JButton btnNewButton = new JButton("Sair");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				dispose();
+			}
+		});
+		btnNewButton.setBounds(10, 227, 256, 23);
+		contentPane.add(btnNewButton);
+	}
+}
