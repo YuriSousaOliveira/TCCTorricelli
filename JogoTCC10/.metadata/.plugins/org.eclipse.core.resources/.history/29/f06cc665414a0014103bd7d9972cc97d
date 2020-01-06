@@ -1,0 +1,48 @@
+import javax.swing.JLabel;
+
+
+public class Validacao {
+	public void validapaulo (JLabel Paulo2, JLabel Paulo3){
+		if(Paulo2.equals(Paulo3)){
+			Paulo2.setVisible(false);
+			Paulo3.setVisible(true);	
+		}
+	}
+	
+	public void validaamapa (JLabel Amapa2, JLabel Amapa3){
+		if(Amapa2.equals(Amapa3)){
+			Amapa2.setVisible(false);
+			Amapa3.setVisible(true);	
+		}
+	}
+	
+	public void validaalagoas (JLabel Alagoas2, JLabel Alagoas3){
+		if(Alagoas2.equals(Alagoas3)){
+			Alagoas2.setVisible(false);
+			Alagoas3.setVisible(true);	
+		}
+	}
+	
+	public void validaamazonas (JLabel Amazonas2, JLabel Amazonas3){
+		if(Amazonas2.equals(Amazonas3)){
+			Amazonas2.setVisible(false);
+			Amazonas3.setVisible(true);	
+		}
+	}
+	
+	public void validabahia (JLabel Bahia2, JLabel Bahia3){
+		if(Bahia2.equals(Bahia3)){
+			Bahia2.setVisible(false);
+			Bahia3.setVisible(true);	
+		}
+	}
+	
+	public void validaceara (JLabel Ceara2, JLabel Ceara3){
+		if(Ceara2.equals(Ceara3)){
+			Ceara2.setVisible(false);
+			Ceara3.setVisible(true);	
+		}
+	}
+	
+
+}

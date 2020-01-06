@@ -1,0 +1,21 @@
+import javax.swing.JLabel;
+
+
+public class Validacao {
+	public void validapaulo (JLabel paulo2, JLabel paulo3){
+		if(paulo2.equals(paulo3)){
+			paulo2.setVisible(true);
+			paulo3.setVisible(false);	
+		}
+	}
+	
+	public void validaamapa (JLabel amapa2, JLabel amapa3){
+		if(amapa2.equals(amapa3)){
+			amapa2.setVisible(true);
+			amapa3.setVisible(false);	
+		}
+	}
+	
+	
+
+}

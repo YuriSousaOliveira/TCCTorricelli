@@ -1,0 +1,1445 @@
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Cursor;
+import java.awt.EventQueue;
+import java.awt.Image;
+import java.awt.Point;
+
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
+import java.awt.Toolkit;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.JRadioButton;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.image.RescaleOp;
+import java.awt.event.MouseMotionAdapter;
+
+
+public class Fase1 extends JFrame {
+	
+	boolean b1= false;
+	
+	
+	
+	int c1=0;
+	int c2=0;
+	
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Fase1 frame = new Fase1();
+					frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Fase1() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Ranking.class.getResource("/Img/icone.png")));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1366, 768);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		final JLabel Amapa2 = new JLabel("");
+		Amapa2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Amapa2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Amapa2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Amapa2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Amapa2.setEnabled(false);
+				Amapa2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Amapa2.setEnabled(false);
+		Amapa2.setBounds(689, 422, 88, 82);
+		ImageIcon imagem3 =new ImageIcon (Jogo.class.getResource("/Estados3/Amapa.png"));
+		Image Amapa= imagem3.getImage().getScaledInstance(Amapa2.getWidth(),Amapa2.getHeight() , Image.SCALE_SMOOTH);
+		Amapa2.setIcon(new ImageIcon(Amapa));
+		
+		contentPane.add(Amapa2);
+		
+		final JLabel Paulo2 = new JLabel("");
+		Paulo2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Paulo2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Paulo2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Paulo2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Paulo2.setEnabled(false);
+				Paulo2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Paulo2.setEnabled(false);
+		Paulo2.setBounds(689, 298, 122, 98);
+		ImageIcon imagem25 =new ImageIcon (Jogo.class.getResource("/Estados3/SãoPaulo.png"));
+		Image Paulo= imagem25.getImage().getScaledInstance(Paulo2.getWidth(),Paulo2.getHeight() , Image.SCALE_SMOOTH);
+		Paulo2.setIcon(new ImageIcon(Paulo));
+		contentPane.add(Paulo2);
+		
+		final JLabel Alagoas2= new JLabel("");
+		Alagoas2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Alagoas2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Alagoas2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Alagoas2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Alagoas2.setEnabled(false);
+				Alagoas2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Alagoas2.setEnabled(false);
+		Alagoas2.setBounds(690, 196, 79, 82);
+		ImageIcon imagem2 =new ImageIcon (Jogo.class.getResource("/Estados3/Alagoas.png"));
+		Image Alagoas= imagem2.getImage().getScaledInstance(Alagoas2.getWidth(),Alagoas2.getHeight() , Image.SCALE_SMOOTH);
+		Alagoas2.setIcon(new ImageIcon(Alagoas));
+		contentPane.add(Alagoas2);
+		
+		final JLabel Amazonas2 = new JLabel("");
+		Amazonas2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Amazonas2.setEnabled(true);
+		 		Amazonas2.repaint();
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Amazonas2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Amazonas2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Amazonas2.setEnabled(false);
+				Amazonas2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Amazonas2.setEnabled(false);
+		Amazonas2.setBounds(618, 549, 175, 143);
+		ImageIcon imagem4 =new ImageIcon (Jogo.class.getResource("/Estados3/Amazonas.png"));
+		Image Amazonas= imagem4.getImage().getScaledInstance(Amazonas2.getWidth(),Amazonas2.getHeight() , Image.SCALE_SMOOTH);
+		Amazonas2.setIcon(new ImageIcon(Amazonas));
+		contentPane.add(Amazonas2);
+		
+		final JLabel Bahia2 = new JLabel("");
+		Bahia2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Bahia2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Bahia2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Bahia2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Bahia2.setEnabled(false);
+				Bahia2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Bahia2.setEnabled(false);
+		Bahia2.setBounds(782, 99, 122, 116);
+		ImageIcon imagem5 =new ImageIcon (Jogo.class.getResource("/Estados3/Bahia.png"));
+		Image Bahia= imagem5.getImage().getScaledInstance(Bahia2.getWidth(),Bahia2.getHeight() , Image.SCALE_SMOOTH);
+		Bahia2.setIcon(new ImageIcon(Bahia));
+		contentPane.add(Bahia2);
+		
+		final JLabel Ceara2 = new JLabel("");
+		Ceara2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Ceara2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Ceara2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Ceara2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Ceara2.setEnabled(false);
+				Ceara2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Ceara2.setEnabled(false);
+		Ceara2.setBounds(833, 257, 71, 53);
+		ImageIcon imagem6 =new ImageIcon (Jogo.class.getResource("/Estados3/Ceara.png"));
+		Image Ceara= imagem6.getImage().getScaledInstance(Ceara2.getWidth(),Ceara2.getHeight() , Image.SCALE_SMOOTH);
+		Ceara2.setIcon(new ImageIcon(Ceara));
+		contentPane.add(Ceara2);
+		
+		final JLabel Destrito2 = new JLabel("");
+		Destrito2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Destrito2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Destrito2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Destrito2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Destrito2.setEnabled(false);
+				Destrito2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Destrito2.setEnabled(false);
+		Destrito2.setBounds(848, 347, 44, 32);
+		ImageIcon imagem7 =new ImageIcon (Jogo.class.getResource("/Estados3/DestritoFederal.png"));
+		Image Destrito= imagem7.getImage().getScaledInstance(Destrito2.getWidth(),Destrito2.getHeight() , Image.SCALE_SMOOTH);
+		Destrito2.setIcon(new ImageIcon(Destrito));
+		contentPane.add(Destrito2);
+		
+		final JLabel Espirito2 = new JLabel("");
+		Espirito2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Espirito2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Espirito2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Espirito2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Espirito2.setEnabled(false);
+				Espirito2.repaint();
+				
+			}
+		});
+		Espirito2.setEnabled(false);
+		Espirito2.setBounds(833, 390, 59, 72);
+		ImageIcon imagem8 =new ImageIcon (Jogo.class.getResource("/Estados3/EspiritoSanto.png"));
+		Image Espirito= imagem8.getImage().getScaledInstance(Espirito2.getWidth(),Espirito2.getHeight() , Image.SCALE_SMOOTH);
+		Espirito2.setIcon(new ImageIcon(Espirito));
+		contentPane.add(Espirito2);
+		
+		final JLabel goias2 = new JLabel("");
+		goias2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		goias2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		goias2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				goias2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				goias2.setEnabled(false);
+				goias2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		goias2.setEnabled(false);
+		goias2.setBounds(804, 485, 88, 98);
+		ImageIcon imagem9 =new ImageIcon (Jogo.class.getResource("/Estados3/Goias.png"));
+		Image goias= imagem9.getImage().getScaledInstance(goias2.getWidth(),goias2.getHeight() , Image.SCALE_SMOOTH);
+		goias2.setIcon(new ImageIcon(goias));
+		contentPane.add(goias2);
+		
+		final JLabel Maranhao2 = new JLabel("");
+		Maranhao2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Maranhao2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Maranhao2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Maranhao2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Maranhao2.setEnabled(false);
+				Maranhao2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Maranhao2.setEnabled(false);
+		Maranhao2.setBounds(804, 594, 88, 98);
+		ImageIcon imagem10 =new ImageIcon (Jogo.class.getResource("/Estados3/Maranhão.png"));
+		Image Maranhao= imagem10.getImage().getScaledInstance(Maranhao2.getWidth(),Maranhao2.getHeight() , Image.SCALE_SMOOTH);
+		Maranhao2.setIcon(new ImageIcon(Maranhao));
+		contentPane.add(Maranhao2);
+		
+		final JLabel Matosul2 = new JLabel("");
+		Matosul2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Matosul2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Matosul2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Matosul2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Matosul2.setEnabled(false);
+				Matosul2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Matosul2.setEnabled(false);
+		Matosul2.setBounds(915, 603, 135, 98);
+		ImageIcon imagem11 =new ImageIcon (Jogo.class.getResource("/Estados3/MatoGrossodoSul.png"));
+		Image Matosul= imagem11.getImage().getScaledInstance(Matosul2.getWidth(),Matosul2.getHeight() , Image.SCALE_SMOOTH);
+		Matosul2.setIcon(new ImageIcon(Matosul));
+		contentPane.add(Matosul2);
+		
+		final JLabel Mato2 = new JLabel("");
+		Mato2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Mato2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Mato2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Mato2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Mato2.setEnabled(false);
+				Mato2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Mato2.setEnabled(false);
+		Mato2.setBounds(932, 109, 153, 124);
+		ImageIcon imagem12 =new ImageIcon (Jogo.class.getResource("/Estados3/MatoGrosso.png"));
+		Image Mato= imagem12.getImage().getScaledInstance(Mato2.getWidth(),Mato2.getHeight() , Image.SCALE_SMOOTH);
+		Mato2.setIcon(new ImageIcon(Mato));
+		contentPane.add(Mato2);
+		
+		final JLabel Minas2 = new JLabel("");
+		Minas2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Minas2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Minas2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Minas2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Minas2.setEnabled(false);
+				Minas2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+
+		Minas2.setEnabled(false);
+		Minas2.setBounds(932, 468, 153, 124);
+		ImageIcon imagem13 =new ImageIcon (Jogo.class.getResource("/Estados3/MinasGerais.png"));
+		Image Minas= imagem13.getImage().getScaledInstance(Minas2.getWidth(),Minas2.getHeight() , Image.SCALE_SMOOTH);
+		Minas2.setIcon(new ImageIcon(Minas));
+		contentPane.add(Minas2);
+		
+		final JLabel Para2 = new JLabel("");
+		Para2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Para2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Para2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Para2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Para2.setEnabled(false);
+				Para2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Para2.setEnabled(false);
+		Para2.setBounds(942, 284, 153, 143);
+		ImageIcon imagem14 =new ImageIcon (Jogo.class.getResource("/Estados3/Para.png"));
+		Image Para= imagem14.getImage().getScaledInstance(Para2.getWidth(),Para2.getHeight() , Image.SCALE_SMOOTH);
+		Para2.setIcon(new ImageIcon(Para));
+		contentPane.add(Para2);
+		
+		final JLabel Paraiba2 = new JLabel("");
+		Paraiba2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Paraiba2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Paraiba2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Paraiba2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Paraiba2.setEnabled(false);
+				Paraiba2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Paraiba2.setEnabled(false);
+		Paraiba2.setBounds(1237, 99, 79, 53);
+		ImageIcon imagem15 =new ImageIcon (Jogo.class.getResource("/Estados3/Paraiba.png"));
+		Image Paraiba= imagem15.getImage().getScaledInstance(Paraiba2.getWidth(),Paraiba2.getHeight() , Image.SCALE_SMOOTH);
+		Paraiba2.setIcon(new ImageIcon(Paraiba));
+		contentPane.add(Paraiba2);
+		
+		final JLabel Parana2 = new JLabel("");
+		Parana2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Parana2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Parana2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Parana2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Parana2.setEnabled(false);
+				Parana2.repaint();
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Parana2.setEnabled(false);
+		Parana2.setBounds(1120, 138, 88, 65);
+		ImageIcon imagem16 =new ImageIcon (Jogo.class.getResource("/Estados3/Parana.png"));
+		Image Parana= imagem16.getImage().getScaledInstance(Parana2.getWidth(),Parana2.getHeight() , Image.SCALE_SMOOTH);
+		Parana2.setIcon(new ImageIcon(Parana));
+		contentPane.add(Parana2);
+		
+		final JLabel Pernambuco2 = new JLabel("");
+		Pernambuco2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Pernambuco2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Pernambuco2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Pernambuco2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Pernambuco2.setEnabled(false);
+				Pernambuco2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Pernambuco2.setEnabled(false);
+		Pernambuco2.setBounds(1120, 229, 88, 47);
+		ImageIcon imagem17 =new ImageIcon (Jogo.class.getResource("/Estados3/Pernambuco.png"));
+		Image Pernambuco= imagem17.getImage().getScaledInstance(Pernambuco2.getWidth(),Pernambuco2.getHeight() , Image.SCALE_SMOOTH);
+		Pernambuco2.setIcon(new ImageIcon(Pernambuco));
+		contentPane.add(Pernambuco2);
+		
+		final JLabel Rio2 = new JLabel("");
+		Rio2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Rio2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Rio2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Rio2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Rio2.setEnabled(false);
+				Rio2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Rio2.setEnabled(false);
+		Rio2.setBounds(1120, 313, 71, 53);
+		ImageIcon imagem19 =new ImageIcon (Jogo.class.getResource("/Estados3/RiodeJaneiro.png"));
+		Image Rio= imagem19.getImage().getScaledInstance(Rio2.getWidth(),Rio2.getHeight() , Image.SCALE_SMOOTH);
+		Rio2.setIcon(new ImageIcon(Rio));
+		contentPane.add(Rio2);
+		
+		final JLabel RGNorte2 = new JLabel("");
+		RGNorte2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		RGNorte2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		RGNorte2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				RGNorte2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				RGNorte2.setEnabled(false);
+				RGNorte2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		RGNorte2.setEnabled(false);
+		RGNorte2.setBounds(1061, 636, 71, 59);
+		ImageIcon imagem20 =new ImageIcon (Jogo.class.getResource("/Estados3/RioGrandedoNorte.png"));
+		Image RGNorte= imagem20.getImage().getScaledInstance(RGNorte2.getWidth(),RGNorte2.getHeight() , Image.SCALE_SMOOTH);
+		RGNorte2.setIcon(new ImageIcon(RGNorte));
+		contentPane.add(RGNorte2);
+		
+		final JLabel Piaui2 = new JLabel("");
+		Piaui2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Piaui2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Piaui2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Piaui2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Piaui2.setEnabled(false);
+				Piaui2.repaint();
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Piaui2.setEnabled(false);
+		Piaui2.setBounds(1237, 173, 88, 82);
+		ImageIcon imagem18 =new ImageIcon (Jogo.class.getResource("/Estados3/Piaui.png"));
+		Image Piaui= imagem18.getImage().getScaledInstance(Piaui2.getWidth(),Piaui2.getHeight() , Image.SCALE_SMOOTH);
+		Piaui2.setIcon(new ImageIcon(Piaui));
+		contentPane.add(Piaui2);
+		
+		final JLabel RGSul2 = new JLabel("");
+		RGSul2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		RGSul2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		RGSul2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				RGSul2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				RGSul2.setEnabled(false);
+				RGSul2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		RGSul2.setEnabled(false);
+		RGSul2.setBounds(1237, 284, 88, 82);
+		ImageIcon imagem21 =new ImageIcon (Jogo.class.getResource("/Estados3/RioGrandedoSul.png"));
+		Image RGSul= imagem21.getImage().getScaledInstance(RGSul2.getWidth(),RGSul2.getHeight() , Image.SCALE_SMOOTH);
+		RGSul2.setIcon(new ImageIcon(RGSul));
+		contentPane.add(RGSul2);
+
+		final JLabel Rondonia2 = new JLabel("");
+		Rondonia2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Rondonia2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Rondonia2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Rondonia2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Rondonia2.setEnabled(false);
+				Rondonia2.repaint();
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Rondonia2.setEnabled(false);
+		Rondonia2.setBounds(1120, 390, 88, 82);
+		ImageIcon imagem22 =new ImageIcon (Jogo.class.getResource("/Estados3/Rondonia.png"));
+		Image Rondonia= imagem22.getImage().getScaledInstance(Rondonia2.getWidth(),Rondonia2.getHeight() , Image.SCALE_SMOOTH);
+		Rondonia2.setIcon(new ImageIcon(Rondonia));
+		contentPane.add(Rondonia2);
+		
+		final JLabel Roraima2 = new JLabel("");
+		Roraima2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Roraima2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Roraima2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Roraima2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Roraima2.setEnabled(false);
+				Roraima2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Roraima2.setEnabled(false);
+		Roraima2.setBounds(1237, 390, 88, 82);
+		ImageIcon imagem23 =new ImageIcon (Jogo.class.getResource("/Estados3/Roraima.png"));
+		Image Roraima= imagem23.getImage().getScaledInstance(Roraima2.getWidth(),Roraima2.getHeight() , Image.SCALE_SMOOTH);
+		Roraima2.setIcon(new ImageIcon(Roraima));
+		contentPane.add(Roraima2);
+		
+		final JLabel Santa2 = new JLabel("");
+		Santa2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Santa2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Santa2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Santa2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Santa2.setEnabled(false);
+				Santa2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Santa2.setEnabled(false);
+		Santa2.setBounds(1095, 536, 122, 72);
+		ImageIcon imagem24 =new ImageIcon (Jogo.class.getResource("/Estados3/SantaCatarina.png"));
+		Image Santa= imagem24.getImage().getScaledInstance(Santa2.getWidth(),Santa2.getHeight() , Image.SCALE_SMOOTH);
+		Santa2.setIcon(new ImageIcon(Santa));
+		contentPane.add(Santa2);
+		
+		final JLabel Sergipe2 = new JLabel("");
+		Sergipe2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Sergipe2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Sergipe2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Sergipe2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Sergipe2.setEnabled(false);
+				Sergipe2.repaint();
+				
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Sergipe2.setEnabled(false);
+		Sergipe2.setBounds(1163, 648, 44, 42);
+		ImageIcon imagem26 =new ImageIcon (Jogo.class.getResource("/Estados3/Sergipe.png"));
+		Image Sergipe= imagem26.getImage().getScaledInstance(Sergipe2.getWidth(),Sergipe2.getHeight() , Image.SCALE_SMOOTH);
+		Sergipe2.setIcon(new ImageIcon(Sergipe));
+		contentPane.add(Sergipe2);
+		
+		final JLabel Tocantins2 = new JLabel("");
+		Tocantins2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Tocantins2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z1=new Point(arg0.getPoint());
+	             Point q1=new Point(C.getLocation());  
+	             
+	             C.setBounds(q1.x+(z1.x-c1),q1.y+(z1.y-c2),C.getSize().  
+	                                     width,C.getSize().height);  
+		 		
+		 	}
+
+
+		 	}
+		 );
+		Tocantins2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Tocantins2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Tocantins2.setEnabled(false);
+				Tocantins2.repaint();
+				}
+			
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Tocantins2.setEnabled(false);
+		Tocantins2.setBounds(1237, 497, 88, 111);
+		ImageIcon imagem27 =new ImageIcon (Jogo.class.getResource("/Estados3/Tocantins.png"));
+		Image Tocantins= imagem27.getImage().getScaledInstance(Tocantins2.getWidth(),Tocantins2.getHeight() , Image.SCALE_SMOOTH);
+		Tocantins2.setIcon(new ImageIcon(Tocantins));
+		contentPane.add(Tocantins2);
+		
+		 final JLabel Acre2 = new JLabel("");
+		 Acre2.addMouseMotionListener(new MouseMotionAdapter() {
+		 	@Override
+		 	public void mouseDragged(MouseEvent arg0) {
+		 		Acre2.setEnabled(true);
+		 		
+		 		Component C=arg0.getComponent();
+		 		
+		 		if(b1==false){b1=true;Point p=new  
+                        Point(arg0.getPoint());c1=p.x;c2=p.y;}
+		 		 Point z=new Point(arg0.getPoint());
+	             Point q=new Point(C.getLocation());  
+	             
+	             C.setBounds(q.x+(z.x-c1),q.y+(z.y-c2),C.getSize().width,C.getSize().height);  
+		 		C.getLocation();
+		 	}
+
+
+		 	}
+		 );
+		Acre2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent arg0) {
+				Acre2.setEnabled(true);
+			}
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+				Acre2.setEnabled(false);
+				Acre2.repaint();
+				
+			}
+			@Override
+			public void mouseEntered(MouseEvent arg0) {
+				 Cursor c1=new Cursor(Cursor.HAND_CURSOR);                                    
+	              setCursor(c1);
+			}
+			@Override
+			public void mouseExited(MouseEvent e) {
+				 Cursor c2=new Cursor(Cursor.DEFAULT_CURSOR);                                    
+	              setCursor(c2);
+			}
+		});
+		Acre2.setEnabled(false);
+		Acre2.setBounds(1237, 636, 88, 59);
+		ImageIcon imagem1 =new ImageIcon (Jogo.class.getResource("/Estados3/Acre.png"));
+		Image Acre= imagem1.getImage().getScaledInstance(Acre2.getWidth(),Acre2.getHeight() , Image.SCALE_SMOOTH);
+		Acre2.setIcon(new ImageIcon(Acre));
+		contentPane.add(Acre2);
+	
+		JButton btnajuda = new JButton("");
+		btnajuda.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				Jogo pag3 = new Jogo();
+				pag3.setVisible(true);
+				pag3.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	            dispose(); 
+			}
+		});
+		btnajuda.setBounds(1120, 23, 205, 65);
+		ImageIcon imagens3 =new ImageIcon (Jogo.class.getResource("/Img/btnvoltar.png"));
+		Image botao3= imagens3.getImage().getScaledInstance(btnajuda.getWidth(),btnajuda.getHeight() , Image.SCALE_SMOOTH);
+		btnajuda.setIcon(new ImageIcon(botao3));
+		contentPane.add(btnajuda);
+
+		
+		JLabel lblmapa3 = new JLabel("");
+		lblmapa3.setBounds(26, 23, 262, 47);
+		ImageIcon imagen =new ImageIcon (Jogo.class.getResource("/Img/logo2.png"));
+		Image mapa3= imagen.getImage().getScaledInstance(lblmapa3.getWidth(),lblmapa3.getHeight() , Image.SCALE_SMOOTH);
+		lblmapa3.setIcon(new ImageIcon(mapa3));
+		contentPane.add(lblmapa3);
+		
+		JLabel lblMapa2 = new JLabel("");
+		lblMapa2.setBounds(80, 95, 600, 600);
+		ImageIcon image =new ImageIcon (Jogo.class.getResource("/Img/moldebrasil.png"));
+		Image mapa2= image.getImage().getScaledInstance(lblMapa2.getWidth(),lblMapa2.getHeight() , Image.SCALE_SMOOTH);
+		lblMapa2.setIcon(new ImageIcon(mapa2));
+		contentPane.add(lblMapa2);
+		
+		JLabel lblMapa = new JLabel("");
+		lblMapa.setBounds(0, 0, 1400, 1000);
+		ImageIcon imagem =new ImageIcon (Jogo.class.getResource("/Img/fundooceano.png"));
+		Image mapa= imagem.getImage().getScaledInstance(lblMapa.getWidth(),lblMapa.getHeight() , Image.SCALE_SMOOTH);
+		lblMapa.setIcon(new ImageIcon(mapa));
+		contentPane.add(lblMapa);
+		
+		
+	}
+}

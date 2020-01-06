@@ -1,0 +1,11 @@
+
+public class Validacao {
+	public void validapaulo (Fase1 paulo1, Fase1 paulo2){
+		if(paulo1.equals(paulo2)){
+			paulo1.setVisible(true);
+			paulo2.setVisible(false);
+			
+		}
+	}
+
+}

@@ -1,0 +1,9 @@
+
+public class validacao extends Fase1 {
+
+	
+	public validacao(){
+		Acre2.getText();
+	}
+	
+}
